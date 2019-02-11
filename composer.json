@@ -1,0 +1,21 @@
+{
+    "name": "bearcodi/ci-phpunit",
+    "authors": [
+        {
+            "name": "Mark Babič",
+            "email": "mark@bearcodi.com"
+        }
+    ],
+    "require": {
+        "phpunit/phpunit": "^5.7"
+    },
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "Bearcodi\\CIPHPUnit\\": "./src"
+        },
+        "files": [
+            "./src/Framework/helpers.php"
+        ]
+    }
+}
