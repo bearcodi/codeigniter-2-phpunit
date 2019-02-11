@@ -2,15 +2,19 @@
 
 namespace Bearcodi\CIPHPUnit;
 
-use PHPUnit\Framework\TestCase as PHPUnitTestCase;
+use Whoops\Run as Whoops;
+use Whoops\Handler\PlainTextHandler as CliHandler;
+use Orchestra\Testbench\TestCase as OrchestraTestCase;
 use Bearcodi\CIPHPUnit\Framework\Traits\SimulatesRequests;
 
-class TestCase extends PHPUnitTestCase
+class TestCase extends OrchestraTestCase
 {
     use SimulatesRequests;
     
     public static function setUpBeforeClass()
     {
+        (new Whoops)->pushHandler(new CliHandler)->register();
+        
         spl_autoload_register('autoloadCiSubfolderControllers');
     }
     
@@ -18,5 +22,6 @@ class TestCase extends PHPUnitTestCase
     {
         spl_autoload_unregister('autoloadCiSubfolderControllers');
     }
+    
 }
 

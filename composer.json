@@ -7,7 +7,10 @@
         }
     ],
     "require": {
-        "phpunit/phpunit": "^5.7"
+        "filp/whoops": "^2.3",
+        "phpunit/phpunit": "^5.7",
+        "orchestra/database": "^3.4",
+        "orchestra/testbench": "^3.4"
     },
     "minimum-stability": "stable",
     "autoload": {
